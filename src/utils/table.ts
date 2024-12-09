@@ -73,6 +73,7 @@ const tableQueryReducer = <TQuery extends TBaseQuery>(
           ...query.filters,
           duration: payload,
         },
+        page: 0,
       }
     default:
       throw new Error(`Unhandled action type: ${type}`)
