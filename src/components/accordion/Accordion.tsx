@@ -22,6 +22,7 @@ export const Accordion = ({
   isMulti = false,
   isOpenAll = false,
   allEventKeys = [],
+  manualControl,
 }: AccordionProps) => {
   const service = useMachine(accordion.machine, {
     id: defaultActiveKey as string,
@@ -41,6 +42,8 @@ export const Accordion = ({
 
   React.useEffect(() => {
     const activeKeys = service.context.get('value') || []
+
+    if (manualControl) return
 
     if (JSON.stringify(storedActiveKeys) === JSON.stringify(activeKeys)) {
       return

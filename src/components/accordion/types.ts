@@ -16,6 +16,7 @@ export interface AccordionProps {
   isMulti?: boolean
   isOpenAll?: boolean
   allEventKeys?: string[] | number[]
+  manualControl?: boolean
 }
 
 export interface HeaderProps {
